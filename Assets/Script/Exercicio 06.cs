@@ -16,15 +16,14 @@ public class Exercicio06 : MonoBehaviour
 
     void Start()
     {
-        EscolherPersonagem("Guerreiro"); // Simulando a escolha do personagem
-        // Você pode mudar para "Mago" para testar a outra opção
+        EscolherPersonagem("Guerreiro"); 
     }
 
     void EscolherPersonagem(string tipo)
        
     {
       
-        personagem = new Personagem(tipo); // Cria o personagem baseado na escolha
+        personagem = new Personagem(tipo); 
 
         if (personagem.Tipo == "Guerreiro")
         {

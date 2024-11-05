@@ -8,12 +8,12 @@ public class Exercicio05 : MonoBehaviour
 
         public Jogador()
         {
-            Pontos = 0; // Inicializa os pontos como 0
+            Pontos = 0; 
         }
 
         public void AdicionarPontos(int pontos)
         {
-            Pontos += pontos; // Adiciona os pontos ao total
+            Pontos += pontos; 
         }
     }
     private Jogador jogador;
@@ -22,8 +22,8 @@ public class Exercicio05 : MonoBehaviour
     {
         jogador = new Jogador();
 
-        // Simula a conclusão da missão com uma quantidade de pontos
-        CompletarMissao(60); // Por exemplo, o jogador ganhou 60 pontos
+       
+        CompletarMissao(60); 
     }
 
     void CompletarMissao(int pontosGanho)

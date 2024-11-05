@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class Exercicio07 : MonoBehaviour
 {
-    public int numeroDeFaces; // Definido pelo usuário
+    public int numeroDeFaces; 
 
     void Start()
     {
-        Rolagem(); // Chama a função de rolagem no início do jogo
+        Rolagem(); 
     }
 
     void Rolagem()
     {
-        // Verifica se o número de faces é válido
+       
         if (numeroDeFaces < 1)
         {
             print("Número de faces deve ser maior que 0");
@@ -19,7 +19,7 @@ public class Exercicio07 : MonoBehaviour
         }
 
         // Rolagem do dado
-        int resultado = Random.Range(1, numeroDeFaces + 1); // +1 para incluir a face máxima
+        int resultado = Random.Range(1, numeroDeFaces + 1); 
         print("Resultado da rolagem: " + resultado);
     }
 }

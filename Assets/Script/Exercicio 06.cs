@@ -2,41 +2,36 @@ using UnityEngine;
 
 public class Exercicio06 : MonoBehaviour
 {
-    public class Personagem
-    {
-        public string Tipo { get; private set; }
+    //6. (Escolha de personagem) O jogador pode escolher entre o
+    //personagem Guerreiro ou Mago.Exiba "Guerreiro escolhido" se o
+    //jogador selecionar Guerreiro e "Mago escolhido" se selecionar
+    //Mago.
 
-        public Personagem(string tipo)
-        {
-            Tipo = tipo;
-        }
-    }
-
-    private Personagem personagem;
+    [SerializeField] bool mago;
+    [SerializeField] bool guerreiro;
 
     void Start()
     {
-        EscolherPersonagem("Guerreiro"); 
-    }
-
-    void EscolherPersonagem(string tipo)
-       
-    {
-      
-        personagem = new Personagem(tipo); 
-
-        if (personagem.Tipo == "Guerreiro")
-        {
-            print("Guerreiro escolhido");
-        }
-        else if (personagem.Tipo == "Mago")
+        if (mago == true && guerreiro == false)
         {
             print("Mago escolhido");
         }
+        else if (mago == false && guerreiro == true)
+        {
+            print("Guerreiro escolhido");
+        }
+        else if (mago && guerreiro)
+        {
+            print("Amigo (mão no ombro) só um ;)");
+        }
         else
         {
-            print("Tipo de personagem inválido");
+            print("Então não joga");
         }
     }
-}
 
+    void Update()
+    {
+
+    }
+}

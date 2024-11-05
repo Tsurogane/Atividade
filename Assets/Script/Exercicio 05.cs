@@ -1,46 +1,33 @@
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
 public class Exercicio05 : MonoBehaviour
 {
-    public class Jogador
-    {
-        public int Pontos { get; private set; }
+    //5. (Pontuação de missão) Após completar uma missão, o jogador
+    //recebe pontos.Verifique se ele ganhou mais de 50 pontos.Se sim,
+    //exiba "Missão bem-sucedida"; caso contrário, "Missão
+    //incompleta".
 
-        public Jogador()
-        {
-            Pontos = 0; 
-        }
-
-        public void AdicionarPontos(int pontos)
-        {
-            Pontos += pontos; 
-        }
-    }
-    private Jogador jogador;
+    [SerializeField] int pontos = 0;
 
     void Start()
     {
-        jogador = new Jogador();
-
-       
-        CompletarMissao(60); 
-    }
-
-    void CompletarMissao(int pontosGanho)
-    {
-        jogador.AdicionarPontos(pontosGanho); // Adiciona os pontos ao jogador
-        VerificarMissao(); // Verifica se a missão foi bem-sucedida
-    }
-
-    void VerificarMissao()
-    {
-        if (jogador.Pontos >= 50)
+        if (pontos >= 50)
         {
-            print("Missão bem-sucedida"); 
+            print("Missão bem - sucedida");
         }
         else
         {
             print("Missão incompleta");
         }
+
+        // condição ? caso vdd : caso falso (Ternario)
+        print(pontos >= 50 ? "Missão bem - sucedida" : "Missão incompleta");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 }

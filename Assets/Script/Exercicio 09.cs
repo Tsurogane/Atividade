@@ -1,36 +1,43 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Exercicio09  : MonoBehaviour 
+public class Exercicio09 : MonoBehaviour
 {
-   
-    public int pontosTimeA = 0;
-    public int pontosTimeB = 0;
-
     
+
+    [SerializeField] int placarTimeA;
+    [SerializeField] int placarTimeB;
+
     void Start()
     {
-        
-        if (pontosTimeA > pontosTimeB)
+        placarTimeA = UnityEngine.Random.Range(1, 5);
+        placarTimeB = UnityEngine.Random.Range(1, 5);
+
+        if (placarTimeA > placarTimeB)
         {
-            
             print("Vitória do Time A!");
         }
-        else if (pontosTimeB > pontosTimeA)
+        else if (placarTimeB > placarTimeA)
         {
-            
             print("Vitória do Time B!");
         }
-        else
+        else 
         {
-          
-            if (pontosTimeA > 3 && pontosTimeB > 3)
+            if (placarTimeA > 3 && placarTimeB > 3)
             {
-                print("Empate emocionante!");
+                print("Foi um empate emocionante!");
             }
             else
             {
-                print("Empate!");
+                print("Foi um empate!");
             }
         }
+    }
+
+
+    void Update()
+    {
+
     }
 }

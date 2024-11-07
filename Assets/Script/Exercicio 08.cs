@@ -1,37 +1,42 @@
+using System;
+using Unity.Collections;
+using UnityEditor;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 
 public class Exercicio08 : MonoBehaviour
 {
-    int hora = 0; // Variável para armazenar as horas
-    int dias = 0; // Variável para armazenar os dias
-    float timer = 0f; // Temporizador para contar o tempo
-    const float incrementoTempo = 10f; // Tempo em segundos para incrementar a hora
+    //8. (Contador de horas e dias) Crie um script que em que uma
+    //variável inteira hora seja incrementada de uma unidade a cada 10
+    //segundos e volte a ser 0 quando alcançar o valor 24. Quando
+    //completar um ciclo, incremente uma variável dias e escreva o
+    //número de dias que se passaram no console. (Coloque o código
+    //dentro da função-evento Update).
+
+    [SerializeField] int dias;
+    [SerializeField] int horas;
+    [SerializeField] float segundos;
+
+    void Start()
+    {
+
+    }
+
 
     void Update()
-        
     {
-        print(hora);
-        // Incrementa o temporizador
-        timer += Time.deltaTime; // Adiciona o tempo desde o último frame
+        segundos += Time.deltaTime;
 
-        
-        if (timer >= incrementoTempo)
+        if (segundos >= 10f)
         {
-            // Reinicia o temporizador
-            timer = 0f;
-
-          
-            hora++;
-
-           
-            if (hora >= 24)
+            horas++;
+            segundos = 0;
+            if (horas == 4)
             {
-                hora = 0; 
-                dias++; 
-                print("Dias passados: " + dias); 
+                dias++;
+                horas = 0;
+                print(dias);
             }
         }
     }
 }
-
-

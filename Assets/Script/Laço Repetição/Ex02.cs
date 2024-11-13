@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class Ex02 : MonoBehaviour
-{//2. (Multiplicação de dano) Um personagem ataca cinco vezes, e o
+public class Exerc02 : MonoBehaviour
+{
+    //2. (Multiplicação de dano) Um personagem ataca cinco vezes, e o
     //dano do ataque aumenta em 2 a cada vez.Exiba o dano a cada
     //ataque.
 
@@ -16,7 +17,6 @@ public class Ex02 : MonoBehaviour
             //dano = dano + 2;
             dano += 2;
         }
-
     }
 
 

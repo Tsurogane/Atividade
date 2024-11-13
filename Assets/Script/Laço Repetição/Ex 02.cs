@@ -16,6 +16,7 @@ public class Ex02 : MonoBehaviour
             //dano = dano + 2;
             dano += 2;
         }
+
     }
 
 
